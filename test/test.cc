@@ -2,7 +2,8 @@
 #include <vector>
 #include "test.h++"
 using namespace std;
-int main(){
+int main()
+{
     cidade oradea, zerind, arad, sibiu;
     oradea.nome = "oradea";
     oradea.vizinhos.push_back("zerind");
@@ -24,41 +25,41 @@ int main(){
 
     sibiu.nome = "sibiu";
 
-    std::vector<cidade> fechado;
-    std::vector<cidade> aberto;
+    vector<cidade> fechado;
+    vector<cidade> aberto;
     bool achou = false;
 
     int dist_total = 0;
 
-    //int f = g+h;
+    // int f = g+h;
     aberto.push_back(oradea);
     fechado.push_back(aberto[0]);
     aberto.pop_back();
-
-
 
     for (int i = 0; i < fechado[0].cidades.size(); i++)
     {
         aberto.push_back(*fechado[0].cidades[i]);
     }
 
-    while (!aberto.empty() )
+    while (!aberto.empty())
     {
-        printf("\n---------------");
+        cout << "\n---------------";
 
-        printf("\ninicio abertos:");
+        cout << endl <<"inicio abertos:";
+
         for (int i = 0; i < aberto.size(); i++)
         {
             printf(" %s,", aberto[i].nome.c_str());
         }
 
-        printf("\nola1");
-        int* h = heuristica(aberto);
+        int *h = heuristica(aberto);
+
         printf("h = %d\n", h[0]);
-        printf("h = %s\n", aberto[h[0]].nome.c_str());
+        printf("cidade escolida: %s\n", aberto[h[0]].nome.c_str());
+        printf("distancia: %d\n", aberto[h[0]].distancia[h[2]]);
 
         fechado.push_back(aberto[h[0]]);
-        aberto.erase(aberto.begin()+h[0]);
+        aberto.erase(aberto.begin() + h[0]);
 
         printf("fim abertos:");
         for (int i = 0; i < aberto.size(); i++)
@@ -71,5 +72,5 @@ int main(){
         {
             printf(" %s,", fechado[i].nome.c_str());
         }
-    }  
+    }
 }

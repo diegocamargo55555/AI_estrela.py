@@ -38,7 +38,7 @@ int main(){
 
     for (int i = 0; i < aberto.size(); i++)
     {
-        cout << "a: " << *fechado[0].cidades[i].nome << endl;
+        cout << "a: " << fechado[0].cidades[i]->nome << endl;
         aberto.push_back(*fechado[0].cidades[i]);
     }
     aberto.push_back(oradea);

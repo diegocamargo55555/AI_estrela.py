@@ -10,7 +10,7 @@ int* heuristica(std::vector<cidade> aberto){
     int* h = new int[2];
 
     int menor = aberto[0].distancia[0];
-    printf("\nola\n");
+    //printf("\nola\n");
 
     for (int i = 0; i < aberto.size(); i++)
     {
