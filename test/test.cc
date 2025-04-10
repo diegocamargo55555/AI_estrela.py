@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "test.h++"
 using namespace std;
 int main()
@@ -9,6 +10,7 @@ int main()
     oradea.vizinhos.push_back("zerind");
     oradea.vizinhos.push_back("sibiu");
     oradea.cidades.push_back(&zerind);
+    oradea.reta = 380;
     oradea.cidades.push_back(&sibiu);
     oradea.distancia.push_back(71);
     oradea.distancia.push_back(151);
@@ -17,6 +19,7 @@ int main()
     zerind.vizinhos.push_back("arad");
     zerind.cidades.push_back(&arad);
     zerind.distancia.push_back(75);
+    zerind.reta = 374;
 
     arad.nome = "arad";
     arad.vizinhos.push_back("sibiu");
@@ -25,7 +28,7 @@ int main()
     arad.vizinhos.push_back("timisoara");
     arad.cidades.push_back(&timisoara);
     arad.distancia.push_back(118);
-
+    arad.reta = 366;
 
     sibiu.nome = "sibiu";
     sibiu.vizinhos.push_back("fagaras");
@@ -33,11 +36,13 @@ int main()
     sibiu.distancia.push_back(99);
     sibiu.vizinhos.push_back("rimnieu");
     sibiu.cidades.push_back(&rimnieu);
-    sibiu.distancia.push_back(99);
+    sibiu.distancia.push_back(80);
+    sibiu.reta = 353;
 
     fagaras.nome = "fagaras";
     fagaras.vizinhos.push_back("");
     fagaras.cidades.push_back(nullptr);
+    fagaras.reta = 178;
     
     rimnieu.nome = "rimnieu";
     rimnieu.vizinhos.push_back("craiova");
@@ -46,16 +51,19 @@ int main()
     rimnieu.vizinhos.push_back("pitesti");
     rimnieu.cidades.push_back(&pitesti);
     rimnieu.distancia.push_back(97);
+    rimnieu.reta = 193;
 
     pitesti.nome = "pitesti";
     pitesti.vizinhos.push_back("craiova");
     pitesti.cidades.push_back(&craiova);
     pitesti.distancia.push_back(138);
+    pitesti.reta = 198;
 
     timisoara.nome = "timisoara";
     timisoara.vizinhos.push_back("logoj");
     timisoara.cidades.push_back(&logoj);
     timisoara.distancia.push_back(111);
+    timisoara.reta = 329;
 
 
 
@@ -88,28 +96,21 @@ int main()
         }
         printf("\npasso:%d", passo);
 
-
-        for (int i = 0; i < fechado[passo].cidades.size(); i++)
-        {
-            aberto.push_back(*fechado[passo].cidades[i]);
-        }
+        int index;
+        cidade prox_cidade = calcular_caminho(aberto, dist_total, &index);
+        int indice = findIndex(aberto, prox_cidade);
         
+        printf("\ndestino escolida: %s\n", prox_cidade.nome.c_str());
+        fechado.push_back(aberto[indice]);
 
-        int *h = heuristica(aberto);
-
-        printf("\nh = %d", h[0]);
-
-        printf("\ndestino escolida: %s\n", aberto[h[0]].nome.c_str());
-        fechado.push_back(aberto[h[0]]);
-
-        printf("distancia: %d\n", fechado[passo].distancia[h[1]]);
-        aberto.erase(aberto.begin() + h[0]);
+        printf("distancia: %d\n", fechado[passo].distancia[index]);
+        aberto.erase(aberto.begin() + indice);
         passo++;
 
         printf("adicionara:");
         for (int i = 0; i < fechado[passo].cidades.size(); i++)
         {
-            printf("%s", fechado[passo].cidades[i]->nome.c_str());
+            printf("%s, ", fechado[passo].cidades[i]->nome.c_str());
 
             aberto.push_back(*fechado[passo].cidades[i]);
         }
