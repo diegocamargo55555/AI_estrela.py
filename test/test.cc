@@ -4,13 +4,13 @@
 using namespace std;
 int main()
 {
-    cidade oradea, zerind, arad, sibiu;
+    cidade oradea, zerind, arad, sibiu, fagaras, rimnieu, craiova, pitesti, timisoara, logoj, mehadia, dobreta;
     oradea.nome = "oradea";
     oradea.vizinhos.push_back("zerind");
     oradea.vizinhos.push_back("sibiu");
     oradea.cidades.push_back(&zerind);
     oradea.cidades.push_back(&sibiu);
-    oradea.distancia.push_back(75);
+    oradea.distancia.push_back(71);
     oradea.distancia.push_back(151);
 
     zerind.nome = "zerind";
@@ -22,8 +22,43 @@ int main()
     arad.vizinhos.push_back("sibiu");
     arad.cidades.push_back(&sibiu);
     arad.distancia.push_back(140);
+    arad.vizinhos.push_back("timisoara");
+    arad.cidades.push_back(&timisoara);
+    arad.distancia.push_back(118);
+
 
     sibiu.nome = "sibiu";
+    sibiu.vizinhos.push_back("fagaras");
+    sibiu.cidades.push_back(&fagaras);
+    sibiu.distancia.push_back(99);
+    sibiu.vizinhos.push_back("rimnieu");
+    sibiu.cidades.push_back(&rimnieu);
+    sibiu.distancia.push_back(99);
+
+    fagaras.nome = "fagaras";
+    fagaras.vizinhos.push_back("");
+    fagaras.cidades.push_back(nullptr);
+    
+    rimnieu.nome = "rimnieu";
+    rimnieu.vizinhos.push_back("craiova");
+    rimnieu.cidades.push_back(&craiova);
+    rimnieu.distancia.push_back(146);
+    rimnieu.vizinhos.push_back("pitesti");
+    rimnieu.cidades.push_back(&pitesti);
+    rimnieu.distancia.push_back(97);
+
+    pitesti.nome = "pitesti";
+    pitesti.vizinhos.push_back("craiova");
+    pitesti.cidades.push_back(&craiova);
+    pitesti.distancia.push_back(138);
+
+    timisoara.nome = "timisoara";
+    timisoara.vizinhos.push_back("logoj");
+    timisoara.cidades.push_back(&logoj);
+    timisoara.distancia.push_back(111);
+
+
+
 
     vector<cidade> fechado;
     vector<cidade> aberto;
@@ -41,27 +76,46 @@ int main()
         aberto.push_back(*fechado[0].cidades[i]);
     }
 
+    int passo = 0;
     while (!aberto.empty())
     {
-        cout << "\n---------------";
 
-        cout << endl <<"inicio abertos:";
+        printf("\n---------------\nCidade atual:%s \ninicio abertos:", fechado[passo].nome.c_str());
 
         for (int i = 0; i < aberto.size(); i++)
         {
-            printf(" %s,", aberto[i].nome.c_str());
+            printf("%s, ", aberto[i].nome.c_str());
         }
+        printf("\npasso:%d", passo);
+
+
+        for (int i = 0; i < fechado[passo].cidades.size(); i++)
+        {
+            aberto.push_back(*fechado[passo].cidades[i]);
+        }
+        
 
         int *h = heuristica(aberto);
 
-        printf("h = %d\n", h[0]);
-        printf("cidade escolida: %s\n", aberto[h[0]].nome.c_str());
-        printf("distancia: %d\n", aberto[h[0]].distancia[h[2]]);
+        printf("\nh = %d", h[0]);
 
+        printf("\ndestino escolida: %s\n", aberto[h[0]].nome.c_str());
         fechado.push_back(aberto[h[0]]);
-        aberto.erase(aberto.begin() + h[0]);
 
-        printf("fim abertos:");
+        printf("distancia: %d\n", fechado[passo].distancia[h[1]]);
+        aberto.erase(aberto.begin() + h[0]);
+        passo++;
+
+        printf("adicionara:");
+        for (int i = 0; i < fechado[passo].cidades.size(); i++)
+        {
+            printf("%s", fechado[passo].cidades[i]->nome.c_str());
+
+            aberto.push_back(*fechado[passo].cidades[i]);
+        }
+
+
+        printf("\nfim abertos:");
         for (int i = 0; i < aberto.size(); i++)
         {
             printf(" %s,", aberto[i].nome.c_str());

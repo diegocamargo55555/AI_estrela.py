@@ -8,6 +8,9 @@ struct cidade {
 };
 int* heuristica(std::vector<cidade> aberto){
     int* h = new int[2];
+    h[0] = 0;
+    h[1] = 0;
+    //printf("\nh[0]:%d \nh[1]:%d", h[0], h[1]);
 
     int menor = aberto[0].distancia[0];
     //printf("\nola\n");
