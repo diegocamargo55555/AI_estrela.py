@@ -5,7 +5,7 @@
 using namespace std;
 int main()
 {
-    cidade oradea, zerind, arad, sibiu, fagaras, rimnieu, craiova, pitesti, timisoara, logoj, mehadia, dobreta;
+    cidade oradea, zerind, arad, sibiu, fagaras, rimnieu, craiova, pitesti, timisoara, logoj, mehadia, dobreta, bucharest;
     oradea.nome = "oradea";
     oradea.vizinhos.push_back("zerind");
     oradea.vizinhos.push_back("sibiu");
@@ -40,10 +40,10 @@ int main()
     sibiu.reta = 353;
 
     fagaras.nome = "fagaras";
-    fagaras.vizinhos.push_back("");
-    fagaras.cidades.push_back(nullptr);
+    fagaras.vizinhos.push_back("bucharest");
+    fagaras.cidades.push_back(&bucharest);
     fagaras.reta = 178;
-    
+
     rimnieu.nome = "rimnieu";
     rimnieu.vizinhos.push_back("craiova");
     rimnieu.cidades.push_back(&craiova);
@@ -57,7 +57,10 @@ int main()
     pitesti.vizinhos.push_back("craiova");
     pitesti.cidades.push_back(&craiova);
     pitesti.distancia.push_back(138);
-    pitesti.reta = 198;
+    pitesti.vizinhos.push_back("bucharest");
+    pitesti.cidades.push_back(&bucharest);
+    pitesti.distancia.push_back(101);
+    pitesti.reta = 98;    
 
     timisoara.nome = "timisoara";
     timisoara.vizinhos.push_back("logoj");
@@ -65,8 +68,11 @@ int main()
     timisoara.distancia.push_back(111);
     timisoara.reta = 329;
 
-
-
+    bucharest.nome = "bucharest";
+    bucharest.vizinhos.push_back("none");
+    bucharest.cidades.push_back(nullptr);
+    bucharest.distancia.push_back(0);
+    bucharest.reta = 0;
 
     vector<cidade> fechado;
     vector<cidade> aberto;
@@ -85,7 +91,8 @@ int main()
     }
 
     int passo = 0;
-    while (!aberto.empty())
+    string meta = "bucharest";
+    while (!aberto.empty() && !achou)
     {
 
         printf("\n---------------\nCidade atual:%s \ninicio abertos:", fechado[passo].nome.c_str());
@@ -99,7 +106,8 @@ int main()
         int index;
         cidade prox_cidade = calcular_caminho(aberto, dist_total, &index);
         int indice = findIndex(aberto, prox_cidade);
-        
+
+
         printf("\ndestino escolida: %s\n", prox_cidade.nome.c_str());
         fechado.push_back(aberto[indice]);
 
@@ -114,8 +122,6 @@ int main()
 
             aberto.push_back(*fechado[passo].cidades[i]);
         }
-
-
         printf("\nfim abertos:");
         for (int i = 0; i < aberto.size(); i++)
         {
@@ -127,5 +133,12 @@ int main()
         {
             printf(" %s,", fechado[i].nome.c_str());
         }
+
+        if (prox_cidade.nome.c_str() == meta)
+        {
+            achou = true;
+            printf("\nCidade escolida encontrada distancia total:%d\n", dist_total);
+        }
+
     }
 }
