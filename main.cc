@@ -60,7 +60,7 @@ int main()
     pitesti.vizinhos.push_back("bucharest");
     pitesti.cidades.push_back(&bucharest);
     pitesti.distancia.push_back(101);
-    pitesti.reta = 98;
+    pitesti.reta = 98;    
 
     timisoara.nome = "timisoara";
     timisoara.vizinhos.push_back("logoj");
@@ -96,28 +96,23 @@ int main()
 
         printf("\n---------------\nCidade atual:%s \ninicio abertos:", fechado[passo].nome.c_str());
 
-        //gprintf("aberto.size: %d\n", aberto.size());
-
         for (int i = 0; i < aberto.size(); i++)
         {
             printf("%s, ", aberto[i].nome.c_str());
         }
         printf("\npasso:%d", passo);
 
-        
-
         int index;
         cidade prox_cidade = calcular_caminho(aberto, dist_total, &index);
         int indice = findIndex(aberto, prox_cidade);
 
+
         printf("\ndestino escolida: %s\n", prox_cidade.nome.c_str());
         fechado.push_back(aberto[indice]);
-        
+
         printf("distancia: %d\n", fechado[passo].distancia[index]);
-        
         aberto.erase(aberto.begin() + indice);
         passo++;
-
 
         printf("adicionara:");
         for (int i = 0; i < fechado[passo].cidades.size(); i++)
@@ -143,5 +138,6 @@ int main()
             achou = true;
             printf("\nCidade escolida encontrada distancia total:%d\n", dist_total);
         }
+
     }
 }
