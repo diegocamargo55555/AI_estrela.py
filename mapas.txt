@@ -11,6 +11,12 @@
 |                                    |     
 |------------------------------------|
 
+VIAGEM COM GPS
+1 - Ur (Iraque)
+2 - Proximo de Ramadi (Iraque)
+3 - Damasco (Siria)
+4 - Bersaba (Israel)
+
 
 |------------------------------------|
 |                                    |
@@ -27,9 +33,16 @@
 |              5                     |
 |------------------------------------|
 
+VIAGEM COM GPS
+1 - Tânis (Egito)
+2 - Nekhel (Egito)
+3 - Proximo de Taba (Egito)
+4 - Éilat (Jordania)
+5 - Feifa (Jordania)
+6 - Cisjordania (Palestina)
+
 
 |----------------------------------------------------------------|
-|                                                                |
 |                    1 - Troia                                   |
 |                        |                                       |
 |                        2 - Ismarus                             |
@@ -48,15 +61,26 @@
 |                       7 Circe ___\ /                           |
 |                           \       \                            |
 |                            \       9 Sereias                   |
-|                             |      /                           !         |
+|                             |      /                           !         
 |                        10 Cila _/                              |
-|                                   \_____11 Calipso             |               |
+|                                   \_____11 Calipso             |               
 |                                         /                      |
 |                                        /                       |
 |                                12 Caríbdis                     |
 |                                     |                          |
 |                                 13 Ítaca                       |
 |----------------------------------------------------------------|
+
+VIAGEM COM GPS
+1 - monte Hisarlık (Turquia)
+2 - Esmirna (Turquia)
+3 - Chios (Turquia)
+4 - Potami (Grecia)
+5 - Legrena (Grecia)
+6 - Pireu (Grecia)
+7 - Corinto (Grecia)
+8 - Drepano (Grecia)
+9 - Itaca (Grecia)
 
 
 

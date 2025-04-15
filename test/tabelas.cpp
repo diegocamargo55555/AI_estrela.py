@@ -5,14 +5,17 @@
 #include <algorithm>
 #include <string>
 using namespace std;
+
 struct cidade {
-    std::string nome;
-    std::vector<std::string> vizinhos;
-    std::vector<cidade*> cidades;
-    std::vector<int> distancia;
+    string nome;
+    vector<string> vizinhos;
+    vector<cidade*> cidades;
+    vector<int> distancia;
     float reta;
 
 };
+
+
 void tabelas(vector<string> *nomesCidades, cidade*aux){
     if(aux != NULL){
         for(int j = 0; j < aux->vizinhos.size(); j++){
@@ -42,6 +45,8 @@ int findIndex(vector<cidade> v, string val) {
         }
     }
 }
+
+
 int main() {
     vector<string> nomesCidades;
     vector<cidade> cidades;
@@ -155,14 +160,19 @@ int main() {
             }
         }
     }
-    setTam = 5;
     cout << fixed << setprecision(2);
-    for(int i = 0; i < numCidades; i++){
-        for(int j = 0; j < numCidades; j++){
-            cout << tabela[i][j] << setw(setTam) << " ";
+    cout << setw(5);
+    for (int i = 0; i < numCidades; i++)
+    {
+        cout << tabela[0][i] << setw(5) << "\t";
+    }
+    cout << endl;
+    for(int i = 1; i < numCidades; i++){
+        cout << setw(10) << tabela[0][i];
+        for(int j = 1; j < numCidades; j++){
+            cout << "\t" << tabela[i][j] << "\t";
         }
-        setTam = 5;
-        cout << setw(setTam) << endl;
+        cout << endl;
     }
     
   return 0;
