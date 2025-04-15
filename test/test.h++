@@ -10,7 +10,7 @@ struct cidade {
 };
 
 cidade calcular_caminho(std::vector<cidade> aberto, int dist_total, int *index){
-    int menor = __INT_MAX__;
+    int menor = INT_MAX;
     cidade aux = aberto[0];
     *index = 0;
     for (int i = 0; i < aberto.size(); i++){

@@ -140,7 +140,6 @@ int main() {
         tabela[i][0] = nomesCidades[i];
     }
     int setTam;
-
     for(int i = 1; i < numCidades; i++){
         for(int j = 1; j < numCidades; j++){
             if(tabela[i][0] == tabela[0][j]){
@@ -148,7 +147,8 @@ int main() {
             } else{
                 float dist = verDistancia(cidades[findIndex(cidades, tabela[i][0])], tabela[0][j]);
                 if(dist != -1){
-                    tabela[i][j] = to_string(dist);
+                    string aux = to_string(dist);
+                    tabela[i][j] = aux.substr(0, aux.find(".")+3);
                 } else{
                     tabela[i][j] = "N/A";
                 }
@@ -156,6 +156,7 @@ int main() {
         }
     }
     setTam = 5;
+    cout << fixed << setprecision(2);
     for(int i = 0; i < numCidades; i++){
         for(int j = 0; j < numCidades; j++){
             cout << tabela[i][j] << setw(setTam) << " ";
