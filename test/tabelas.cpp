@@ -137,14 +137,21 @@ int main() {
     int i = 1;
     nomesCidades.push_back(" ");
     nomesCidades.push_back(aux->nome);
+    
     tabelas(&nomesCidades, aux);
+
     int numCidades = static_cast<int>(nomesCidades.size());
     vector<vector<string>> tabela(numCidades+1, vector<string>(numCidades));
+
+
     tabela[0] = nomesCidades;
+
+
     for(int i = 0; i < numCidades; i++){
         tabela[i][0] = nomesCidades[i];
     }
-    int setTam;
+
+
     for(int i = 1; i < numCidades; i++){
         for(int j = 1; j < numCidades; j++){
             if(tabela[i][0] == tabela[0][j]){
