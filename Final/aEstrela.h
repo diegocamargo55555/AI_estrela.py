@@ -28,7 +28,6 @@ void execucaoEstrela(vector<cidade> vetorCidades, string meta)
             printf("%s, ", aberto[i].nome.c_str());
         }
 
-        printf("\nPasso:%d", passo);
         
         int index;
         cidade prox_cidade = calcular_caminho(fechado[passo], dist_total, &index);
@@ -73,5 +72,4 @@ void execucaoEstrela(vector<cidade> vetorCidades, string meta)
             printf("\nCidade escolhida encontrada distancia total:%d\n", dist_total);
         }
     }
-    printf("\n---------------\n");
 }

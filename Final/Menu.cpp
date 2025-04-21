@@ -10,7 +10,7 @@ int main(){
     int escolha = 1;
     while (escolha <= 3 && escolha > 0)
     {
-        cout << "Escolha qual Viagem deseja comparar os percursos:\n1. Odysseia \n2. Exodo de Moiseis \n3. Viagem de Abraao\nEscolha: ";
+        cout << endl << "Escolha qual Viagem deseja comparar os percursos:\n1. Odysseia \n2. Exodo de Moiseis \n3. Viagem de Abraao\nEscolha: ";
         cin >> escolha;
         system("cls");
         switch (escolha){
