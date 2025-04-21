@@ -157,7 +157,7 @@ void Odyssey(){
     cidades[3].distancia = {500, 1013};
     cidades[3].reta = 1000;
 
-    cidades[4].vizinhos = {"Proximo de Cerveti", "Monaco", "Sorrento"};
+    cidades[4].vizinhos = {"Cerveti", "Monaco", "Sorrento"};
     cidades[4].distancia = {1013, 246, 430};
     cidades[4].reta = 850;
 
