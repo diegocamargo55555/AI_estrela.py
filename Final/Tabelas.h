@@ -180,7 +180,6 @@ void Odyssey(){
     linkCidades(cidades);
     montarTabela(cidades, nomesCidades);
 }
-//mudei todas as cidades GPS de void para vector para retornar o vetor das cidades usadas.
 vector<cidade> OdysseyGPS(){
     vector<string> nomesCidades;
     vector<cidade> cidades(9);
@@ -198,27 +197,27 @@ vector<cidade> OdysseyGPS(){
 
     cidades[0].vizinhos = {"Esmirna", "Chios"};
     cidades[0].distancia = {174, 81};
-    cidades[0].reta = 800;
+    cidades[0].reta = 655;
 
     cidades[1].vizinhos = {"Hisarlik", "Potami", "Chios"};
     cidades[1].distancia = {174, 449, 407};
-    cidades[1].reta = 750;
+    cidades[1].reta = 600;
 
     cidades[2].vizinhos = {"Esmirna", "Potami", "Legrena", "Hisarlik"};
     cidades[2].distancia = {407, 184, 347, 81};
-    cidades[2].reta = 700;
+    cidades[2].reta = 573;
 
     cidades[3].vizinhos = {"Esmirna", "Chios", "Legrena"};
     cidades[3].distancia = {449, 347, 110};
-    cidades[3].reta = 550;
+    cidades[3].reta = 389;
 
     cidades[4].vizinhos = {"Potami", "Pireu", "Corinto", "Chios"};
     cidades[4].distancia = {110, 55, 125, 347};
-    cidades[4].reta = 400;
+    cidades[4].reta = 279;
 
     cidades[5].vizinhos = {"Legrena", "Drepano", "Corinto"};
     cidades[5].distancia = {55, 96, 567};
-    cidades[5].reta = 320;
+    cidades[5].reta = 224;
 
     cidades[6].vizinhos = {"Legrena", "Drepano", "Pireu"};
     cidades[6].distancia = {125, 57, 567};
@@ -226,7 +225,7 @@ vector<cidade> OdysseyGPS(){
 
     cidades[7].vizinhos = {"Pireu", "Corinto", "Itaca"};
     cidades[7].distancia = {96, 57, 128};
-    cidades[7].reta = 130;
+    cidades[7].reta = 128;
 
     cidades[8].vizinhos = {"Drepano"};
     cidades[8].distancia = {128};
@@ -306,22 +305,22 @@ vector<cidade> abraaoGPS(){
 
     cidades[0].vizinhos = {"Ramadi"};
     cidades[0].distancia = {443};
-    cidades[0].reta = 1400;
+    cidades[0].reta = 1490;
 
     cidades[1].vizinhos = {"Ur", "Ar-Rutba", "Damasco"};
-    cidades[1].distancia = {443, 420, 721};
-    cidades[1].reta = 1100;
+    cidades[1].distancia = {443, 301, 727};
+    cidades[1].reta = 1040;
 
-    cidades[2].vizinhos = {"Ramadi", "Ur", "Damasco"};
-    cidades[2].distancia = {301, 727, 420};
-    cidades[2].reta = 1050;
+    cidades[2].vizinhos = {"Ramadi", "Damasco"};
+    cidades[2].distancia = {301, 420};
+    cidades[2].reta = 741;
 
     cidades[3].vizinhos = {"Ramadi", "Ar-Rutba", "Bersaba"};
-    cidades[3].distancia = {721, 420, 361};
-    cidades[3].reta = 600;
+    cidades[3].distancia = {727, 420, 321};
+    cidades[3].reta = 321;
 
     cidades[4].vizinhos = {"Damasco"};
-    cidades[4].distancia = {361};
+    cidades[4].distancia = {321};
     cidades[4].reta = 0;
     linkCidades(cidades);
     montarTabela(cidades, nomesCidades);
@@ -397,23 +396,23 @@ vector<cidade> moisesGPS(){
 
     cidades[0].vizinhos = {"Nekhel"};
     cidades[0].distancia = {255};
-    cidades[0].reta = 500;
+    cidades[0].reta = 761;
 
     cidades[1].vizinhos = {"Tanis", "Taba", "Eilot"};
     cidades[1].distancia = {255, 149, 159};
-    cidades[1].reta = 380;
+    cidades[1].reta = 506;
 
     cidades[2].vizinhos = {"Nekhel", "Eilot"};
     cidades[2].distancia = {149, 79};
-    cidades[2].reta = 350;
+    cidades[2].reta = 583;
 
     cidades[3].vizinhos = {"Taba", "Nekhel", "Feifa"};
     cidades[3].distancia = {79, 159, 182};
-    cidades[3].reta = 270;
+    cidades[3].reta = 347;
 
     cidades[4].vizinhos = {"Eilot", "Cisjordania"};
     cidades[4].distancia = {182, 165};
-    cidades[4].reta = 150;
+    cidades[4].reta = 165;
 
     cidades[5].vizinhos = {"Feifa"};
     cidades[5].distancia = {165};
