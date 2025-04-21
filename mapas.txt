@@ -2,12 +2,12 @@
 |                                    |  1 - Ur
 |              5 ____ 4              |  2 - Babilônia
 |              /     |               |  3 - Mari
-|             /       \ 3            |  4 - Hara
-|            /          \_           |  5 - Alepo
-|         6_/             \_         |  6 - Damasco
-|  7     /                  \__2     |  7 - Siquém
-|  |\___/ _                    \_1   |  8 - Zoá
-|   \____/9                          |  9 - Bersaba
+|             /       \\3            |  4 - Hara
+|            /         \\_           |  5 - Alepo
+|         6_/            \\_         |  6 - Damasco
+|  7     /                  \\_2     |  7 - Siquém
+|  |\\__/ _                   \\_1   |  8 - Zoá
+|  \\____/9                          |  9 - Bersaba
 |                                    |     
 |------------------------------------|
 
@@ -22,14 +22,14 @@ VIAGEM COM GPS
 |                                    |
 |                              9     | 1 - Tânis
 | 1                           /      | 2 - Sucote
-|  \              ___        /       | 3 - Mara
-|  2\__          /  /       /        | 4 - Monte Hor
-|      \        /_6/_      /8        | 5 - Horebe
-|       \3        |  \    /          | 6 - Cades-Barnéia   
-|        \_4      |   \  /           | 7 - Ezioom-Geber
-|          \__    |    \/            | 8 - Punom   
-|             \  /      7            | 9 - Jericó
-|              \/                    |                                 
+| \\              ___        /       | 3 - Mara
+|  2\\_          /  /       /        | 4 - Monte Hor
+|     \\        /_6/_      /8        | 5 - Horebe
+|      \\3        | \\    /          | 6 - Cades-Barnéia   
+|       \\_4      |  \\  /           | 7 - Ezioom-Geber
+|         \\__    |   \\/            | 8 - Punom   
+|            \\  /      7            | 9 - Jericó
+|             \\/                    |                                 
 |              5                     |
 |------------------------------------|
 
@@ -46,24 +46,24 @@ VIAGEM COM GPS
 |                    1 - Troia                                   |
 |                        |                                       |
 |                        2 - Ismarus                             |
-|                         \                                      |
-|                          \                                     |
-|                           \ ___                                |
-|                  3 Lotus-Eaters \                              |
-|                                  \                             |
-|                         4 Cyclops \                            |
-|                                    \                           |
-|                              5 Aeolia\                         |
+|                        \\                                      |
+|                         \\                                     |
+|                          \\ ___                                |
+|                  3 Lotus-Eaters\\                              |
+|                                 \\                             |
+|                         4 Cyclops\\                            |
+|                                   \\                           |
+|                              5 Aeolia\\                        |
 |                                     6 Lestrigões               |
 |                                         /                      |
 |                         Submundo 8     /                       |
-|                            /    \   __/                        |
-|                       7 Circe ___\ /                           |
-|                           \       \                            |
-|                            \       9 Sereias                   |
+|                            /   \\   __/                        |
+|                       7 Circe ___\\/                           |
+|                          \\       \\                           |
+|                           \\       9 Sereias                   |
 |                             |      /                           !         
 |                        10 Cila _/                              |
-|                                   \_____11 Calipso             |               
+|                                  \\_____11 Calipso             |               
 |                                         /                      |
 |                                        /                       |
 |                                12 Caríbdis                     |
