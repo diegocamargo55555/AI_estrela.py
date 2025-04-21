@@ -204,8 +204,8 @@ vector<cidade> OdysseyGPS(){
     cidades[1].distancia = {174, 449, 407};
     cidades[1].reta = 750;
 
-    cidades[2].vizinhos = {"Esmirna", "Potami", "Legrena"};
-    cidades[2].distancia = {407, 184, 347};
+    cidades[2].vizinhos = {"Esmirna", "Potami", "Legrena", "Hisarlik"};
+    cidades[2].distancia = {407, 184, 347, 81};
     cidades[2].reta = 700;
 
     cidades[3].vizinhos = {"Esmirna", "Chios", "Legrena"};
@@ -360,7 +360,7 @@ void moises(){
     cidades[3].reta = 700;
 
     cidades[4].vizinhos = {"MonteSinai"};
-    cidades[4].distancia = {181}; // L - K
+    cidades[4].distancia = {181};
     cidades[4].reta = 550;
 
     cidades[5].vizinhos = {"MonteSinai", "PontoRio"};
