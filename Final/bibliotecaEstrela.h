@@ -2,6 +2,7 @@
 #include <vector>
 #include <math.h>
 #include <climits>
+using namespace std;
 struct cidade {
     std::string nome;
     std::vector<std::string> vizinhos;
@@ -19,7 +20,7 @@ cidade calcular_caminho(std::vector<cidade> aberto, int dist_total, int *index){
         for (int k = 0; k < aberto[i].distancia.size(); k++)
         {
             if (menor >dist_total + aberto[i].distancia[k] + aberto[i].reta)
-            {
+            {   
                 menor = dist_total + aberto[i].distancia[k] + aberto[i].reta;
                 aux = aberto[i];
                 *index = k;
@@ -29,18 +30,11 @@ cidade calcular_caminho(std::vector<cidade> aberto, int dist_total, int *index){
     return aux;
 }
 
-
-
-
 int findIndex(std::vector<cidade> v, cidade val) {
     for (int i = 0; i < v.size(); i++) {
-      
-      	// When the element is found
-        if (v[i].nome == val.nome) {
+          if (v[i].nome == val.nome) {
             return i;
         }
     }
-  	
-  	// When the element is not found
   	return -1;
 }

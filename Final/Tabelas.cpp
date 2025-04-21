@@ -14,6 +14,7 @@ struct cidade
     float reta;
 };
 
+
 void tabelas(vector<string> &visitadas, cidade *atual)
 {
     if (atual == nullptr)

@@ -3,16 +3,9 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include "bibliotecaEstrela.h"
 using namespace std;
 
-struct cidade
-{
-    string nome;
-    vector<string> vizinhos;
-    vector<cidade *> cidades;
-    vector<int> distancia;
-    float reta;
-};
 
 void tabelas(vector<string> &visitadas, cidade *atual)
 {
@@ -43,8 +36,8 @@ float verDistancia(cidade &v, const string &val)
     }
     return -1;
 }
-
-int findIndex(const vector<cidade> &v, const string &val)
+//mudei o nome para ByName para nao dar conflito, e tirei a struct cidades e conecteo direto com a biblioteca, pq isso tava dando conflito.
+int findIndexByName(const vector<cidade> &v, const string &val)
 {
     for (int i = 0; i < v.size(); i++)
     {
@@ -87,7 +80,7 @@ void montarTabela(const vector<cidade> &cidades, vector<string> &nomesCidades)
             }
             else
             {
-                int linha = findIndex(cidades, tabela[i][0]);
+                int linha = findIndexByName(cidades, tabela[i][0]);
                 float dist = verDistancia(const_cast<cidade &>(cidades[linha]), tabela[0][j]);
                 if (dist != -1)
                 {
@@ -133,8 +126,7 @@ vector<cidade> linkCidades(vector<cidade> &cidades)
     return cidades;
 }
 
-void Odyssey()
-{
+void Odyssey(){
     vector<string> nomesCidades;
     vector<cidade> cidades(9);
     string destino = "Itaca";
@@ -188,9 +180,8 @@ void Odyssey()
     linkCidades(cidades);
     montarTabela(cidades, nomesCidades);
 }
-
-void OdysseyGPS()
-{
+//mudei todas as cidades GPS de void para vector para retornar o vetor das cidades usadas.
+vector<cidade> OdysseyGPS(){
     vector<string> nomesCidades;
     vector<cidade> cidades(9);
     string destino = "Itaca";
@@ -242,12 +233,11 @@ void OdysseyGPS()
     cidades[8].reta = 0;
 
     linkCidades(cidades);
-
     montarTabela(cidades, nomesCidades);
+    return cidades;
 }
 
-void abraao()
-{
+void abraao(){
     vector<string> nomesCidades;
     vector<cidade> cidades(9);
     string destino = "Berseba";
@@ -302,8 +292,7 @@ void abraao()
     montarTabela(cidades, nomesCidades);
 }
 
-void abraaoGPS()
-{
+vector<cidade> abraaoGPS(){
 
     vector<string> nomesCidades;
     vector<cidade> cidades(5);
@@ -334,13 +323,12 @@ void abraaoGPS()
     cidades[4].vizinhos = {"Damasco"};
     cidades[4].distancia = {361};
     cidades[4].reta = 0;
-
     linkCidades(cidades);
     montarTabela(cidades, nomesCidades);
+    return cidades;
 }
 
-void moises()
-{
+void moises(){
     vector<string> nomesCidades;
     vector<cidade> cidades(9);
     string destino = "Jerico";
@@ -395,9 +383,7 @@ void moises()
     montarTabela(cidades, nomesCidades);
 }
 
-void moisesGPS()
-{
-
+vector<cidade> moisesGPS(){
     vector<string> nomesCidades;
     vector<cidade> cidades(6);
     string destino = "Cisjordania";
@@ -435,4 +421,5 @@ void moisesGPS()
 
     linkCidades(cidades);
     montarTabela(cidades, nomesCidades);
+    return cidades;
 }
