@@ -37,6 +37,7 @@ void execucaoEstrela(vector<cidade> vetorCidades, string meta)
         printf("\nDestino escolhido: %s\n", prox_cidade.nome.c_str());
         printf("Distancia: %d\n", fechado[passo].distancia[index]);
 
+        dist_total += fechado[passo].distancia[index];
         //Aqui, ele checa se a cidade ja esta no vetor fechado, se nao estiver ele coloca, se tiver ele nao coloca, pra n ter repeticao
         if(findIndex(fechado, aberto[indice]) == -1){
             fechado.push_back(aberto[indice]);
@@ -44,7 +45,6 @@ void execucaoEstrela(vector<cidade> vetorCidades, string meta)
         }
         
         // mudei pro valor da distancia total ser somado aqui
-        dist_total += fechado[passo].distancia[index];
         aberto.erase(aberto.begin() + indice);
 
         printf("Adicionara:");
