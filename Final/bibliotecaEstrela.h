@@ -12,6 +12,24 @@ struct cidade {
 
 };
 
+/*cidade calcular_caminho(std::vector<cidade> aberto, int dist_total, int *index){
+    int menor = INT_MAX;
+    cidade aux = aberto[0];
+    *index = 0;
+    for (int i = 0; i < aberto.size(); i++){
+        for (int k = 0; k < aberto[i].distancia.size(); k++)
+        {
+            if (menor >dist_total + aberto[i].distancia[k] + aberto[i].reta)
+            {   
+                menor = dist_total + aberto[i].distancia[k] + aberto[i].reta;
+                aux = aberto[i];
+                *index = k;
+            }
+        }       
+    }
+    return aux;
+}*/
+
 cidade calcular_caminho(std::vector<cidade> aberto, int dist_total, int *index){
     int menor = INT_MAX;
     cidade aux = aberto[0];

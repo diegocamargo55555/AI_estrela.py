@@ -3,6 +3,7 @@
 #include <algorithm>
 #include "Tabelas.h"
 using namespace std;
+
 void execucaoEstrela(vector<cidade> vetorCidades, string meta)
 {
     vector<cidade> fechado;
@@ -26,30 +27,36 @@ void execucaoEstrela(vector<cidade> vetorCidades, string meta)
         {
             printf("%s, ", aberto[i].nome.c_str());
         }
+
         printf("\nPasso:%d", passo);
+        
         int index;
         cidade prox_cidade = calcular_caminho(aberto, dist_total, &index);
         int indice = findIndex(aberto, prox_cidade);
+        
         printf("\nDestino escolhido: %s\n", prox_cidade.nome.c_str());
+        
         //Aqui, ele checa se a cidade ja esta no vetor fechado, se nao estiver ele coloca, se tiver ele nao coloca, pra n ter repeticao
         if(findIndex(fechado, aberto[indice]) == -1){
             fechado.push_back(aberto[indice]);
+            passo++;
         }
         printf("Distancia: %d\n", fechado[passo].distancia[index]);
+        
         // mudei pro valor da distancia total ser somado aqui
         dist_total += fechado[passo].distancia[index];
         aberto.erase(aberto.begin() + indice);
-        passo++;
 
         printf("Adicionara:");
         for (int i = 0; i < fechado[passo].cidades.size(); i++)
         {
-            printf("%s, ", fechado[passo].cidades[i]->nome.c_str());
             // ele ve se a cidade ja esta no abertos, e se nao estiver ele coloca, se estiver ele nao coloca, pra n ter cidade repetida
-            if(findIndex(aberto, *fechado[passo].cidades[i]) == -1){
+            if(findIndex(aberto, *fechado[passo].cidades[i]) == -1 && findIndex(fechado, *fechado[passo].cidades[i]) == -1){
+                printf("%s, ", fechado[passo].cidades[i]->nome.c_str());
                 aberto.push_back(*fechado[passo].cidades[i]);
             }
         }
+
         printf("\nFim abertos:");
         for (int i = 0; i < aberto.size(); i++)
         {
