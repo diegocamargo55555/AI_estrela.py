@@ -73,4 +73,5 @@ void execucaoEstrela(vector<cidade> vetorCidades, string meta)
             printf("\nCidade escolhida encontrada distancia total:%d\n", dist_total);
         }
     }
+    printf("\n---------------\n");
 }
