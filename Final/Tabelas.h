@@ -399,7 +399,7 @@ vector<cidade> moisesGPS(){
     cidades[0].distancia = {255};
     cidades[0].reta = 500;
 
-    cidades[1].vizinhos = {"Tanis", "Taba", "Eliot"};
+    cidades[1].vizinhos = {"Tanis", "Taba", "Eilot"};
     cidades[1].distancia = {255, 149, 159};
     cidades[1].reta = 380;
 
