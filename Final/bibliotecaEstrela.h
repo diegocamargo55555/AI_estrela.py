@@ -37,10 +37,10 @@ cidade calcular_caminho(cidade atual, int dist_total, int *index)
     *index = 0;
     for (int i = 0; i < atual.cidades.size(); i++)
     {
-        
-        if (menor > dist_total + atual.cidades[i]->distancia[i] + atual.cidades[i]->reta)
+        printf("");
+        if (menor > dist_total + atual.distancia[i] + atual.cidades[i]->reta)
         {
-            menor = dist_total + atual.cidades[i]->distancia[i] + atual.cidades[i]->reta;
+            menor = dist_total + atual.distancia[i] + atual.cidades[i]->reta;
             aux = *atual.cidades[i];
             *index = i;
         }
